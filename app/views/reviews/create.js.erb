@@ -1,0 +1,13 @@
+<% if @review.persisted? %>
+    newReview = "<p><%= @review.content %></p>"
+    reviews = document.getElementById("reviews")
+    reviews.insertAdjacentHTML('beforeend', newReview)
+
+    reviewInput = document.getElementById("review_content")
+    reviewInput.value = "";
+<% else %>
+    reviewForm = document.getElementById("new_review");
+    reviewForm.innerHTML = "<%= j render 'reviews/form', restaurant: @restaurant, review: @review %>";
+<% end %>
+
+
