@@ -1,5 +1,7 @@
 <h1><%= @restaurant.name %></h1>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@restaurant.address}" %>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis a tempora iusto esse dolorum quisquam similique! Non itaque at fugiat minus. Et eaque, ut earum obcaecati ipsum facere natus officia.</p>
 <h2>
   <%= pluralize @restaurant.reviews.size, "review" %>
 </h2>
@@ -13,3 +15,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= render 'reviews/form', restaurant: @restaurant, review: @review %>
